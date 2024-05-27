@@ -6,32 +6,29 @@ using System.Threading.Tasks;
 
 namespace ArenaGame.Weapons
 {
-    public class Axe : IWeapon
+    internal class Sais : IWeapon 
     {
-        private int Strikes = 0;
+        
         public string Name { get; set; }
 
         public double AttackDamage { get; private set; }
 
         public double BlockingPower { get; private set; }
 
-        public Axe(string name)
+        public Sais(string name)
         {
             Name = name;
-            AttackDamage = 17.5;
-            BlockingPower = 10;
+            AttackDamage = 10;
+            BlockingPower = 5;
 
         }
 
-        public void AttackIncrease()
+        public void UltimateAttack(Hero Owner,Hero Defender)
         {
-            Strikes++;
-            if (Strikes == 3)
+            if (Defender.Defend(Owner.Attack()) == 0)
             {
-                Strikes = 0;
-                AttackDamage += 0.2 * AttackDamage;
+                AttackDamage *= 3;
             }
-
         }
     }
 }
