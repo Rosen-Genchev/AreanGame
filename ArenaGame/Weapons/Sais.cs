@@ -17,20 +17,27 @@ namespace ArenaGame.Weapons
 
         public double LifeStealValue { get; private set; }
 
+        private int Strikes = 0;   
+
         public Sais(string name)
         {
             Name = name;
             AttackDamage = 10;
-            BlockingPower = 5;
+            BlockingPower = 10;
 
         }
 
-        public void SpecialAbility(Hero Owner,Hero Defender)
+        public void SpecialAbility()
         {
-            if (Defender.Defend(Owner.Attack()) == 0)
+            AttackDamage = 10;
+            BlockingPower = 10;
+            Strikes++;
+            if(Strikes == 2)
             {
                 AttackDamage *= 3;
+                BlockingPower *= 3;
             }
+           
         }
     }
 }
