@@ -6,31 +6,26 @@ using System.Threading.Tasks;
 
 namespace ArenaGame.Weapons
 {
-    internal class Sais : IWeapon 
+    public class Scyte : IWeapon
     {
-        
         public string Name { get; set; }
 
         public double AttackDamage { get; private set; }
 
         public double BlockingPower { get; private set; }
 
-        public double LifeStealValue { get; private set; }
+        public double LifeStealValue {  get; private set; }
 
-        public Sais(string name)
+        public Scyte(string name)
         {
             Name = name;
-            AttackDamage = 10;
-            BlockingPower = 5;
-
+            AttackDamage = 20;
+            BlockingPower = 10;
         }
 
-        public void SpecialAbility(Hero Owner,Hero Defender)
+        public void SpecialAbility()
         {
-            if (Defender.Defend(Owner.Attack()) == 0)
-            {
-                AttackDamage *= 3;
-            }
+            LifeStealValue = 0.5 * AttackDamage;
         }
     }
 }

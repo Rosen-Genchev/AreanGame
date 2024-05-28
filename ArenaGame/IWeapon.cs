@@ -11,5 +11,9 @@ namespace ArenaGame
         string Name { get; set; }
         double AttackDamage { get; } 
         double BlockingPower { get; }
+
+        double LifeStealValue {  get; }
+
+        void SpecialAbility() { }
     }
 }

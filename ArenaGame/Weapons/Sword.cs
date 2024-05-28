@@ -14,6 +14,9 @@ namespace ArenaGame.Weapons
 
         public double BlockingPower { get; private set; }
 
+        public double LifeStealValue { get; private set; }
+
+
         public Sword(string name)
         {
             Name = name;

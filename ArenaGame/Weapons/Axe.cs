@@ -15,6 +15,9 @@ namespace ArenaGame.Weapons
 
         public double BlockingPower { get; private set; }
 
+        public double LifeStealValue { get; private set; }
+
+
         public Axe(string name)
         {
             Name = name;
@@ -23,13 +26,13 @@ namespace ArenaGame.Weapons
 
         }
 
-        public void AttackIncrease()
+        public void SpecialAbility()
         {
             Strikes++;
             if (Strikes == 3)
             {
                 Strikes = 0;
-                AttackDamage += 0.2 * AttackDamage;
+                AttackDamage += (0.2 * AttackDamage);
             }
 
         }

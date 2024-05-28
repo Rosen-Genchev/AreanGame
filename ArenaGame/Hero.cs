@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,9 +37,11 @@ namespace ArenaGame
         // returns actual damage
         public virtual double Attack()
         {
+            Weapon.SpecialAbility();
             double totalDamage = Strenght + Weapon.AttackDamage;
             double coef = random.Next(80, 120 + 1);
             double realDamage = totalDamage * (coef / 100);
+            Health += Weapon.LifeStealValue;
             return realDamage;
         }
 
