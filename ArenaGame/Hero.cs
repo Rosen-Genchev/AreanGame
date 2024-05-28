@@ -11,7 +11,7 @@ namespace ArenaGame
     {
         protected Random random = new Random();
         public string Name { get; private set; }
-        public double Health { get; protected set; }
+        public double Health { get; private set; }
         public double Armor { get; private set; }
         public double Strenght { get; private set; }
         public IWeapon Weapon { get; private set; }
